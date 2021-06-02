@@ -1,0 +1,12 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BOARD)
+sens=7
+GPIO.setup(sens,GPIO.IN)
+while True:
+	x=GPIO.input(sens)
+	if x:
+	print ' Motion Detected'
+	else:
+	print ' NO Motion Detected'
+	time.sleep(3)
