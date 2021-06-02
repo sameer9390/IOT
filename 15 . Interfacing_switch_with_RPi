@@ -1,0 +1,10 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BOARD)
+sw=7
+GPIO.setup(sw,GPIO.IN)
+while True:
+	x=GPIO.imput(sw)
+	if x:
+		print 'Switch Pressed'
+		time.sleep(3)
