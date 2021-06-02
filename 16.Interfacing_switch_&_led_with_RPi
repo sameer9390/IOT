@@ -1,0 +1,16 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BOARD)
+sw=7
+led=11
+GPIO.setup(sw.GPIO.IN)
+GPIO.setup(led,GPIO.OUT)
+while True:
+	x=GPIO.input(sw)
+	if x==1:
+		GPIO.output(led,1)
+		print ' Switch pressed and led on'
+	else:
+		GPIO.output(led,0)
+		print ' Switch released and led off '
+	time.sleep(3)
