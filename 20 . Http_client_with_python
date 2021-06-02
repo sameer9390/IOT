@@ -1,0 +1,12 @@
+import http.client
+import time
+import random
+
+while True:
+    x=int(round(random.random()*100))
+    print( x)
+    
+    conn=http.client.HTTPConnection('api.thingspeak.com')
+    conn.request('GET','/update?key=1QATYBQ5W0HFT5N4&field1=%d'%x)
+    conn.close()
+    time.sleep(3)
